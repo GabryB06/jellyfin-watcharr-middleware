@@ -1,0 +1,32 @@
+services:
+  middleware:
+    user: 1000:1000 # change with your user id and group id or remove this line and run the container as root
+    container_name: jellyfin_watcharr_middleware
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./credentials.json:/app/credentials.json:ro
+    #depends_on:
+    #  - jellyfin
+    #  - watcharr
+    networks:
+      - isolated
+
+  #jellyfin:
+  # [...]
+  #  networks:
+  #    - public
+  #    - isolated
+
+  #watcharr:
+  # [...]
+  #  networks:
+  #    - public
+  #    - isolated
+
+
+networks:
+  isolated:
+    internal: true   # No external connectivity
+  public:   # Standard bridge network, created by Compose on docker compose up
