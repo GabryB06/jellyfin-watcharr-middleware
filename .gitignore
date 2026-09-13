@@ -1,0 +1,5 @@
+dev/*
+.vscode/*
+
+.env
+credentials.json
