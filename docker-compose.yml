@@ -3,6 +3,7 @@ services:
     user: 1000:1000 # change with your user id and group id or remove this line and run the container as root
     container_name: jellyfin_watcharr_middleware
     build: .
+    restart: unless-stopped
     env_file:
       - .env
     volumes:
