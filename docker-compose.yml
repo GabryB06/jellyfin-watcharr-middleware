@@ -17,17 +17,16 @@ services:
   #jellyfin:
   # [...]
   #  networks:
-  #    - public
+  #    - default
   #    - isolated
 
   #watcharr:
   # [...]
   #  networks:
-  #    - public
+  #    - default
   #    - isolated
 
 
 networks:
   isolated:
     internal: true   # No external connectivity
-  public:   # Standard bridge network, created by Compose on docker compose up
